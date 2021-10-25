@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>PowerSolar.info</title>
+  <link rel="icon" href="soloarlogo.png" type="image/gif" sizes="16x16">
+  <link rel="stylesheet" href="slow.css" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+</head>
+
+<body onload="storeurl()">
+
+  <!-- MultiStep Form -->
+  <div id="up" class="row">
+    <div class="col-md-1 "></div>
+    <div class="col-md-10 col-md-offset-3">
+      <form id="lp_form" class="msform" action="https://eeltracklp.leadspediatrack.com/post.do" method="post"
+        onsubmit="myFunction()">
+        <!-- progressbar -->
+        <img class="sun1" src="soloarlogo.png">
+
+        <h1 class="pwala"><b>Save With Solar</b></h1>
+        <p class="pwala">Answer 9 Quick and easy Question to compare Quotes from Top-Rated Solar installers.</p>
+
+        <!-- fieldsets -->
+        <fieldset>
+          <h2 class="fs-title">How much is your energy bill?</h2>
+          <p class="pwala">Choose the most relevant option for you:</p>
+          <p class="pwala">$50 - $800</p>
+          <!-- range slider -->
+
+          <!-- <input type="range" id="rangeSlider" class="centered" min="0" max="200" step="1" value="0" oninput="updateValue(this.value)" onchange="updateValue(this.value)">
+                  <output id="sliderVal"> </output>
+                  <p class="pwala"> Value: <span id="rangeValue">0%</span></p> -->
+          <input type="range" id="rangeSlider" name="average_monthly_utility_bill" min="50" max="800" step='50' value="50"
+            onchange="updateTextInput(this.value);" oninput="updateValue(this.value)"
+            onchange="updateValue(this.value)">
+          <p class="pwala"> Value: <span id="rangeValue">$50</span></p>
+          <script type="text/javascript">
+
+            function updateValue(newValue) {
+              document.getElementById("rangeValue").innerHTML = "$" + newValue;
+              document.getElementById('satrted').disabled = false;
+              document.getElementById('allp').style.display = 'none';
+            }
+            function updateTextInput(val) {
+              document.getElementById('textInput').value = val;
+            }
+          </script>
+          <!-- range slider khtm -->
+          <input type="button" name="next" class="next action-button" id="satrted" value="Get Started" />
+          <!-- test phsae -->
+          <div class="alert" id="allp">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <strong>Warning!</strong> Energy Bill is required to proceed.
+          </div>
+
+          <!-- test phsae -->
+          <h2 class="fs-title">Join the 120,480 home owners that</h2>
+          <h2 class="fs-title">switched to solar in 2020</h2>
+          <br><br>
+
+        </fieldset>
+        <fieldset>
+          <h2 class="fs-title">How much sun hits your roof?</h2>
+          <p class="pwala">Choose the most relevant option for you:</p><br>
+          <div class="container">
+            <div>
+              <input type="radio" id="control_01" onclick="validate()" name="roof_shade" value="fullsun">
+              <label class="laclii" for="control_01">
+                <div class="obj"><img class="sun" src="sun1.png"></div>
+              </label>
+            </div>
+            <div>
+              <input type="radio" id="control_02" name="roof_shade" onclick="validate()" value="partlyshaded">
+              <label class="laclii" for="control_02">
+                <div class="obj"><img class="sun" src="sun2.png"></div>
+              </label>
+            </div>
+            <div>
+              <input type="radio" id="control_03" name="roof_shade" onclick="validate()" value="mostlyshaded">
+              <label class="laclii" for="control_03">
+                <div class="obj"><img class="sun" src="sun3.png"></div>
+              </label>
+            </div>
+            <div>
+              <input type="radio" id="control_04" name="roof_shade" onclick="validate()" value="notsure">
+              <label class="laclii" for="control_04">
+                <div class="obj"><img class="sun" src="qus.png"></div>
+              </label>
+            </div>
+
+
+
+          </div><br>
+          <div class="container">
+            <div>
+              <p class="pwala">Full sun</p>
+            </div>
+            <div>
+              <p class="pwala">Partly Shaded</p>
+            </div>
+            <div>
+              <p class="pwala">Mostly shaded</p>
+            </div>
+            <div>
+              <p class="pwala">Not Sure</p>
+            </div>
+          </div>
+
+          <input type="button" name="next" class="next action-button" id="start1" value="Next" />
+          <!-- test phsae -->
+
+          <div class="alert" id="allp1">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <strong>Warning!</strong> Select the option to proceed.
+          </div>
+
+          <!-- test phsae -->
+          <br><br>
+        </fieldset>
+        <fieldset>
+          <h2 class="fs-title">Whats Your Address?</h2>
+          <p class="pwala">This will help us find and compare contractors in your areas.</p>
+          <br><br>
+          <input style="width: 70%;" type="text" name="address" id="address" onchange="validate1()"
+            placeholder="Address" /><br>
+          <input style="width: 70%;" type="email" name="email_address" id="email_address" onchange="validate1()"
+            placeholder="Enter Email Address Manually" />
+          <span id="text"></span><br><br>
+          <h5 class="pwala">I am the homeowner</h5><br>
+          <select style="width: 70%;" name="homeowner" id="homeowner">
+            <option value="YES">YES</option>
+            <option value="NO">NO</option>
+          </select>
+          <input type="button" name="next" class="next action-button" id="start2" value="Next" />
+          <!-- test phsae -->
+          <div class="alert" id="allp2">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <strong>Warning!</strong> All the fields are mandatory.
+          </div>
+
+          <!-- test phsae -->
+          <br><br>
+        </fieldset>
+        <fieldset>
+          <h2 class="fs-title">Whats Your Address?</h2>
+          <p class="pwala">This will help us find and compare contractors in your areas.</p>
+          <br>
+          <input class="buuttoon" type="text" name="address" id="address" onchange="validate2()"
+            placeholder="Address 2" />
+          <input class="buuttoon" type="text" name="city" id="city" onchange="validate2()" placeholder="City" />
+          <input class="buuttoon" type="number"
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+            maxlength="5" name="zip_code" minlength="5" id="zip_code" onchange="validate2()"
+            placeholder="Zip (5 digits)" />
+          <input class="buuttoon" type="text" name="state" id="state" onchange="validate2()" placeholder="State" />
+
+          <input type="button" name="next" class="next action-button" id="start3" value="CONTINUE" />
+          <!-- test phsae -->
+          <div class="alert" id="allp3">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <strong>Warning!</strong> All the fields are mandatory.
+          </div>
+
+          <!-- test phsae -->
+          <br><br>
+
+        </fieldset>
+        <fieldset>
+          <h2 class="fs-title">Who Is Your Energy Provider?</h2>
+          <p class="pwala">Choose your provider or enter it below:</p>
+          <br><br>
+          <!-- select -->
+
+          <select name="utility_provider" id="selectbox" onchange="validate3()">
+              <option  value="utility_provider" >Unsure/Not Listed</option>
+            <option value="AECO (Alabama Electric Company)">AECO (Alabama Electric Company)</option>
+            <option value="Alabama Power">Alabama Power</option>
+            <option value="Alameda Municipal Power">Alameda Municipal Power</option>
+            <option value="Alaska Villages Electric Cooperative">Alaska Villages Electric Cooperative</option>
+            <option value="Allegheny Power">Allegheny Power</option>
+            <option value="Alliant Energy">Alliant Energy</option>
+            <option value="Ambit Energy">Ambit Energy</option>
+            <option value="Ameren">Ameren</option>
+            <option value="American Electric Power">American Electric Power</option>
+            <option value="Amigo Energy">Amigo Energy</option>
+            <option value="Anaheim Public Utilities">Anaheim Public Utilities</option>
+            <option value="Appalachian Power">Appalachian Power</option>
+            <option value="Arizona Public Service">Arizona Public Service</option>
+            <option value="Ashland Electric">Ashland Electric</option>
+            <option value="Atlantic City Electric">Atlantic City Electric</option>
+            <option value="Austin Energy">Austin Energy</option>
+            <option value="Avista Utilities">Avista Utilities</option>
+            <option value="Azusa Light & Water">Azusa Light & Water</option>
+            <option value="Baltimore Gas & Electric">Baltimore Gas & Electric</option>
+            <option value="Bangor Hydro Electric">Bangor Hydro Electric</option>
+            <option value="Basin Electric Power Cooperative">Basin Electric Power Cooperative</option>
+            <option value="Batavia Municipal Electric">Batavia Municipal Electric</option>
+            <option value="Bear Valley Electric">Bear Valley Electric</option>
+            <option value="Beauregard Electric CO-OP">Beauregard Electric CO-OP</option>
+            <option value="Benton PUD">Benton PUD</option>
+            <option value="Berea Municipal Utilities">Berea Municipal Utilities</option>
+            <option value="Berkeley Electric Cooperative">Berkeley Electric Cooperative</option>
+            <option value="Berkshire Company">Berkshire Company</option>
+            <option value="Big Rivers Electric Corporation">Big Rivers Electric Corporation</option>
+            <option value="Black Hills Energy">Black Hills Energy</option>
+            <option value="Black Hills Power">Black Hills Power</option>
+            <option value="Blue Grass Energy">Blue Grass Energy</option>
+            <option value="Blue Ridge Electrical Membership Corp.">Blue Ridge Electrical Membership Corp.</option>
+            <option value="Borough of Ellwood City">Borough of Ellwood City</option>
+            <option value="Bounce Energy">Bounce Energy</option>
+            <option value="Braintree Electric Light Department">Braintree Electric Light Department</option>
+            <option value="Brigham City Public Power">Brigham City Public Power</option>
+            <option value="Brunswick EMC">Brunswick EMC</option>
+            <option value="Bryan Texas Utilities">Bryan Texas Utilities</option>
+            <option value="Burbank Water & Power">Burbank Water & Power</option>
+            <option value="Caddo Electric Cooperative">Caddo Electric Cooperative</option>
+            <option value="California Public Utilities Commission">California Public Utilities Commission</option>
+            <option value="Calpine">Calpine</option>
+            <option value="Canby Electric">Canby Electric</option>
+            <option value="Carteret-Craven Electric Cooperative">Carteret-Craven Electric Cooperative</option>
+            <option value="CenterPoint Energy">CenterPoint Energy</option>
+            <option value="Central Electric Power Cooperative">Central Electric Power Cooperative</option>
+            <option value="Central Hudson Gas & Electric">Central Hudson Gas & Electric</option>
+            <option value="Central Maine Power">Central Maine Power</option>
+            <option value="Central Montana Electric Power Cooperative">Central Montana Electric Power Cooperative
+            </option>
+            <option value="Central Power Electric Cooperative">Central Power Electric Cooperative</option>
+            <option value="Central Vermont Public Service">Central Vermont Public Service</option>
+            <option value="CH Energy Group">CH Energy Group</option>
+            <option value="Champion Energy Services">Champion Energy Services</option>
+            <option value="Chariton Valley Electric Cooperative">Chariton Valley Electric Cooperative</option>
+            <option value="Chelan County Public Utility District">Chelan County Public Utility District</option>
+            <option value="Cherokee Electric Cooperative">Cherokee Electric Cooperative</option>
+            <option value="Cheyenne Light Fuel & Power">Cheyenne Light Fuel & Power</option>
+            <option value="Choptank Electric Cooperative">Choptank Electric Cooperative</option>
+            <option value="Chugach Electric Association">Chugach Electric Association</option>
+            <option value="Cincinnati Bell Energy">Cincinnati Bell Energy</option>
+            <option value="Cirro Energy">Cirro Energy</option>
+            <option value="Citizens Choice Energy Jamestown BPU">Citizens Choice Energy Jamestown BPU</option>
+            <option value="Citizens Electric of Lewisburg">Citizens Electric of Lewisburg</option>
+            <option value="Citizens Utilities Board">Citizens Utilities Board</option>
+            <option value="City & County of San Francisco">City & County of San Francisco</option>
+            <option value="City of Dover Electric Department">City of Dover Electric Department</option>
+            <option value="City of Milford Electric Department">City of Milford Electric Department</option>
+            <option value="City of Palo Alto Utilities">City of Palo Alto Utilities</option>
+            <option value="City of Rock Hill">City of Rock Hill</option>
+            <option value="City of Safford Electric Department">City of Safford Electric Department</option>
+            <option value="City of Tallahassee Utilities">City of Tallahassee Utilities</option>
+            <option value="City of Vero Beach">City of Vero Beach</option>
+            <option value="City Utilities of Springfield">City Utilities of Springfield</option>
+            <option value="Claverack REC">Claverack REC</option>
+            <option value="Clay Electric Co-op">Clay Electric Co-op</option>
+            <option value="Clearwater Power">Clearwater Power</option>
+            <option value="CLECO">CLECO</option>
+            <option value="Cleveland Electric Illuminating Company">Cleveland Electric Illuminating Company</option>
+            <option value="Coast Electric">Coast Electric</option>
+            <option value="College Station Utilities">College Station Utilities</option>
+            <option value="Colorado Springs Utilities">Colorado Springs Utilities</option>
+            <option value="Colton Public Utilities Glendale Public Service Department">Colton Public Utilities Glendale
+              Public Service Department</option>
+            <option value="Columbia REA">Columbia REA</option>
+            <option value="Columbia River Public Utility District">Columbia River Public Utility District</option>
+            <option value="ComEd Electric Company">ComEd Electric Company</option>
+            <option value="Connecticut Light & Power">Connecticut Light & Power</option>
+            <option value="Connecticut Natural Gas">Connecticut Natural Gas</option>
+            <option value="Consolidated Edison Company of New York (Con Edison)">Consolidated Edison Company of New York
+              (Con Edison)</option>
+            <option value="Consolidated Electric Cooperative">Consolidated Electric Cooperative</option>
+            <option value="Consumers Energy">Consumers Energy</option>
+            <option value="Copper Valley Electric Association">Copper Valley Electric Association</option>
+            <option value="Coserv Electric">Coserv Electric</option>
+            <option value="Coweta Fayette EMC">Coweta Fayette EMC</option>
+            <option value="CPS Energy">CPS Energy</option>
+            <option value="Dairyland Power Co-op">Dairyland Power Co-op</option>
+            <option value="Danville Utilities">Danville Utilities</option>
+            <option value="Dayton Power & Light">Dayton Power & Light</option>
+            <option value="Delaware Electric Cooperative">Delaware Electric Cooperative</option>
+            <option value="Delmarva Power">Delmarva Power</option>
+            <option value="DEMCO">DEMCO</option>
+            <option value="Denton Municipal Electric">Denton Municipal Electric</option>
+            <option value="Direct Energy">Direct Energy</option>
+            <option value="Dominion Virginia Power">Dominion Virginia Power</option>
+            <option value="Douglas County Public Utility District">Douglas County Public Utility District</option>
+            <option value="dPi Energy">dPi Energy</option>
+            <option value="DTE Energy (Detroit Edison)">DTE Energy (Detroit Edison)</option>
+            <option value="Duke Energy">Duke Energy</option>
+            <option value="Duke Energy Indiana">Duke Energy Indiana</option>
+            <option value="Duke Energy Kentucky">Duke Energy Kentucky</option>
+            <option value="Duke Energy NC">Duke Energy NC</option>
+            <option value="Duke Energy Ohio">Duke Energy Ohio</option>
+            <option value="Duke Energy SC">Duke Energy SC</option>
+            <option value="Duncan Valley Electric Cooperative">Duncan Valley Electric Cooperative</option>
+            <option value="Duquesne Light">Duquesne Light</option>
+            <option value="East River Electric Cooperative">East River Electric Cooperative</option>
+            <option value="East River Electric Power Co-op">East River Electric Power Co-op</option>
+            <option value="Eau Claire Energy Cooperative">Eau Claire Energy Cooperative</option>
+            <option value="El Paso Electric">El Paso Electric</option>
+            <option value="Electric Database Publishing">Electric Database Publishing</option>
+            <option value="Electric Power Board">Electric Power Board</option>
+            <option value="Electrical District No. 2">Electrical District No. 2</option>
+            <option value="ElectriCities">ElectriCities</option>
+            <option value="Emerald PUD">Emerald PUD</option>
+            <option value="Empire District Electric Company">Empire District Electric Company</option>
+            <option value="Entergy">Entergy</option>
+            <option value="Entrust Energy">Entrust Energy</option>
+            <option value="Eugene Water & Electric Board">Eugene Water & Electric Board</option>
+            <option value="Everything Energy">Everything Energy</option>
+            <option value="Excel Energy">Excel Energy</option>
+            <option value="Farmers Electrical Cooperative">Farmers Electrical Cooperative</option>
+            <option value="Farmington Electric Utility System">Farmington Electric Utility System</option>
+            <option value="First Electric Cooperative">First Electric Cooperative</option>
+            <option value="First Texas Energy Corporation">First Texas Energy Corporation</option>
+            <option value="FirstEnergy">FirstEnergy</option>
+            <option value="Fleming-Mason Energy Cooperative">Fleming-Mason Energy Cooperative</option>
+            <option value="Flint Energies">Flint Energies</option>
+            <option value="Florida Municipal Power Agency">Florida Municipal Power Agency</option>
+            <option value="Florida Power & Light">Florida Power & Light</option>
+            <option value="Florida Public Utility Company Palm Beach">Florida Public Utility Company Palm Beach</option>
+            <option value="Gainesville Regional Utilities">Gainesville Regional Utilities</option>
+            <option value="Garland Power and Light">Garland Power and Light</option>
+            <option value="Georgetown Utility Services (GUS)">Georgetown Utility Services (GUS)</option>
+            <option value="Georgia EMC">Georgia EMC</option>
+            <option value="Georgia Power">Georgia Power</option>
+            <option value="Gexa Energy">Gexa Energy</option>
+            <option value="Golden Valley Electric Association">Golden Valley Electric Association</option>
+            <option value="Granite State Electric">Granite State Electric</option>
+            <option value="Grant County Public Utility District">Grant County Public Utility District</option>
+            <option value="Great River Energy">Great River Energy</option>
+            <option value="Green Island Power Authority">Green Island Power Authority</option>
+            <option value="Green Mountain Energy">Green Mountain Energy</option>
+            <option value="Green Mountain Power">Green Mountain Power</option>
+            <option value="Gridley Municipal Utilities">Gridley Municipal Utilities</option>
+            <option value="Guadalupe Valley Electric Cooperative">Guadalupe Valley Electric Cooperative</option>
+            <option value="Gulf Power">Gulf Power</option>
+            <option value="GVEC">GVEC</option>
+            <option value="Halifax Electric Membership">Halifax Electric Membership</option>
+            <option value="Hawaiian Electric Company (HECO)">Hawaiian Electric Company (HECO)</option>
+            <option value="Hawaiian Electric Industries">Hawaiian Electric Industries</option>
+            <option value="Healdsburg Municipal Electric Department">Healdsburg Municipal Electric Department</option>
+            <option value="Henderson Municipal Power and Light">Henderson Municipal Power and Light</option>
+            <option value="High Plains Power">High Plains Power</option>
+            <option value="High West Energy">High West Energy</option>
+            <option value="Highline Electric Association">Highline Electric Association</option>
+            <option value="Holden Municipal Light Department">Holden Municipal Light Department</option>
+            <option value="Holland Board of Public Works">Holland Board of Public Works</option>
+            <option value="Holy Cross Energy Company">Holy Cross Energy Company</option>
+            <option value="Howard Electric Cooperative">Howard Electric Cooperative</option>
+            <option value="Hutchinson Utilities Commission">Hutchinson Utilities Commission</option>
+            <option value="Hyrum City Power & Light">Hyrum City Power & Light</option>
+            <option value="IDACORP">IDACORP</option>
+            <option value="Idaho Power">Idaho Power</option>
+            <option value="Imperial Irrigation District">Imperial Irrigation District</option>
+            <option value="Independence Power and Light">Independence Power and Light</option>
+            <option value="Indianapolis Power & Light">Indianapolis Power & Light</option>
+            <option value="Intermountain Power Agency">Intermountain Power Agency</option>
+            <option value="Intermountain Rural Electric Association">Intermountain Rural Electric Association</option>
+            <option value="International Electric Power (IEP)">International Electric Power (IEP)</option>
+            <option value="Interstate Power and Light Company">Interstate Power and Light Company</option>
+            <option value="ITC Midwest">ITC Midwest</option>
+            <option value="Jackson">Jackson</option>
+            <option value="JEA">JEA</option>
+            <option value="Jersey Central Power and Light Company">Jersey Central Power and Light Company</option>
+            <option value="Jones-Onslow EMC">Jones-Onslow EMC</option>
+            <option value="Just Energy">Just Energy</option>
+            <option value="Kansas City Board of Public Utilities">Kansas City Board of Public Utilities</option>
+            <option value="Kansas City Power & Light">Kansas City Power & Light</option>
+            <option value="Kauai Island Utility Cooperative (KIUC)">Kauai Island Utility Cooperative (KIUC)</option>
+            <option value="Kaysville City">Kaysville City</option>
+            <option value="Kenergy Corp">Kenergy Corp</option>
+            <option value="Kentucky Utilities">Kentucky Utilities</option>
+            <option value="Kingsport Power (Appalachian Power)">Kingsport Power (Appalachian Power)</option>
+            <option value="Kissimmee Utility Authority">Kissimmee Utility Authority</option>
+            <option value="Klickitat Public Utility District">Klickitat Public Utility District</option>
+            <option value="Knoxville Utilities Board">Knoxville Utilities Board</option>
+            <option value="Kodiak Electric Association">Kodiak Electric Association</option>
+            <option value="L&O Power Co-op">L&O Power Co-op</option>
+            <option value="La Plata Electric Association">La Plata Electric Association</option>
+            <option value="Lafayette Utilities System">Lafayette Utilities System</option>
+            <option value="Lake Country Power">Lake Country Power</option>
+            <option value="Lake Worth Utilities">Lake Worth Utilities</option>
+            <option value="Lakeland Electric">Lakeland Electric</option>
+            <option value="Lamar Light and Power">Lamar Light and Power</option>
+            <option value="Lansing Board of Water & Light">Lansing Board of Water & Light</option>
+            <option value="LCEC">LCEC</option>
+            <option value="Lenoir City Utilities Board">Lenoir City Utilities Board</option>
+            <option value="Little River Electric Co-Op">Little River Electric Co-Op</option>
+            <option value="Lodi Electric Utility">Lodi Electric Utility</option>
+            <option value="Long Island Power Authority (LIPA)">Long Island Power Authority (LIPA)</option>
+            <option value="Lorain Medina Rural Electric Cooperative">Lorain Medina Rural Electric Cooperative</option>
+            <option value="Los Angeles Department of Water and Power">Los Angeles Department of Water and Power</option>
+            <option value="Louisville Gas & Electric">Louisville Gas & Electric</option>
+            <option value="Lower Colorado River Authority">Lower Colorado River Authority</option>
+            <option value="Lower Valley Energy">Lower Valley Energy</option>
+            <option value="Lumbee River EMC">Lumbee River EMC</option>
+            <option value="Luminant">Luminant</option>
+            <option value="Madison Gas and Electric">Madison Gas and Electric</option>
+            <option value="Magic Valley">Magic Valley</option>
+            <option value="Magnolia Electric">Magnolia Electric</option>
+            <option value="Mansfield Municipal Electric">Mansfield Municipal Electric</option>
+            <option value="Marblehead Electric Light Department">Marblehead Electric Light Department</option>
+            <option value="Marshall Municipal Utilities">Marshall Municipal Utilities</option>
+            <option value="Mason County Public Utility District 3">Mason County Public Utility District 3</option>
+            <option value="Massachusetts Electric">Massachusetts Electric</option>
+            <option value="Massachusetts Municipal Wholesale Electric Company (MMWEC)">Massachusetts Municipal Wholesale
+              Electric Company (MMWEC)</option>
+            <option value="Massena Electric Department">Massena Electric Department</option>
+            <option value="Maui Electric Company">Maui Electric Company</option>
+            <option value="MDU">MDU</option>
+            <option value="Memphis Light Gas and Water">Memphis Light Gas and Water</option>
+            <option value="Met-Ed">Met-Ed</option>
+            <option value="MidAmerican Energy">MidAmerican Energy</option>
+            <option value="Midwest Energy">Midwest Energy</option>
+            <option value="Minnesota Power">Minnesota Power</option>
+            <option value="Minnkota Power Cooperative">Minnkota Power Cooperative</option>
+            <option value="Mississippi Power Company">Mississippi Power Company</option>
+            <option value="Missouri River Energy Services">Missouri River Energy Services</option>
+            <option value="Modesto Irrigation District">Modesto Irrigation District</option>
+            <option value="Mojave Electric Cooperative">Mojave Electric Cooperative</option>
+            <option value="Montana Electric Cooperatives' Association">Montana Electric Cooperatives' Association
+            </option>
+            <option value="Montana-Dakota Utilities">Montana-Dakota Utilities</option>
+            <option value="Mountain Utilities">Mountain Utilities</option>
+            <option value="Municipal Light & Power">Municipal Light & Power</option>
+            <option value="Nantucket Electric">Nantucket Electric</option>
+            <option value="Narragansett Electric">Narragansett Electric</option>
+            <option value="Nashville Electric Service">Nashville Electric Service</option>
+            <option value="National Grid">National Grid</option>
+            <option value="Navopache Electric Cooperative">Navopache Electric Cooperative</option>
+            <option value="Nebraska Public Power District">Nebraska Public Power District</option>
+            <option value="Nevada Power">Nevada Power</option>
+            <option value="New York Power Authority (NYPA)">New York Power Authority (NYPA)</option>
+            <option value="New York State Electric & Gas (NYSEG)">New York State Electric & Gas (NYSEG)</option>
+            <option value="New-Mac Electric">New-Mac Electric</option>
+            <option value="Norris Electric Cooperative">Norris Electric Cooperative</option>
+            <option value="North Carolina Electric Membership Corp.">North Carolina Electric Membership Corp.</option>
+            <option value="North Little Rock Electric">North Little Rock Electric</option>
+            <option value="Northeast Utilities">Northeast Utilities</option>
+            <option value="Northern Indiana Public Service Company">Northern Indiana Public Service Company</option>
+            <option value="Northern Neck Electric Cooperative">Northern Neck Electric Cooperative</option>
+            <option value="Northwestern Energy">Northwestern Energy</option>
+            <option value="NOVEC">NOVEC</option>
+            <option value="NRG Energy">NRG Energy</option>
+            <option value="NSTAR">NSTAR</option>
+            <option value="NV Energy">NV Energy</option>
+            <option value="Ocala Electric">Ocala Electric</option>
+            <option value="Ohio Edison">Ohio Edison</option>
+            <option value="Oklahoma Gas & Electric">Oklahoma Gas & Electric</option>
+            <option value="Omaha Public Power District">Omaha Public Power District</option>
+            <option value="Oncor Electric (Formerly TXU)">Oncor Electric (Formerly TXU)</option>
+            <option value="Orange & Rockland">Orange & Rockland</option>
+            <option value="Orlando Utilities Commission">Orlando Utilities Commission</option>
+            <option value="Otter Tail Power Company">Otter Tail Power Company</option>
+            <option value="Overton Power District No 5">Overton Power District No 5</option>
+            <option value="Owensboro Municipal Utilities">Owensboro Municipal Utilities</option>
+            <option value="Pacific Gas & Electric">Pacific Gas & Electric</option>
+            <option value="PacifiCorp">PacifiCorp</option>
+            <option value="PacifiCorp (Pacific Power)">PacifiCorp (Pacific Power)</option>
+            <option value="PacifiCorp (Rocky Mountain Power)">PacifiCorp (Rocky Mountain Power)</option>
+            <option value="Pasadena Water & Power">Pasadena Water & Power</option>
+            <option value="Peabody Municipal Light Plant">Peabody Municipal Light Plant</option>
+            <option value="PECO">PECO</option>
+            <option value="Pedernales Electric Cooperative">Pedernales Electric Cooperative</option>
+            <option value="Penelec">Penelec</option>
+            <option value="Penn Power">Penn Power</option>
+            <option value="Pennywise Power">Pennywise Power</option>
+            <option value="People">People</option>
+            <option value="PEPCO">PEPCO</option>
+            <option value="Pike County Light & Power Company">Pike County Light & Power Company</option>
+            <option value="Portland General Electric">Portland General Electric</option>
+            <option value="Potomoc Edison (FirstEnergy)">Potomoc Edison (FirstEnergy)</option>
+            <option value="PowerSouth Energy Cooperative">PowerSouth Energy Cooperative</option>
+            <option value="PPL">PPL</option>
+            <option value="Progress Energy Carolinas">Progress Energy Carolinas</option>
+            <option value="Progress Energy Florida">Progress Energy Florida</option>
+            <option value="Public Service Company of New Mexico">Public Service Company of New Mexico</option>
+            <option value="Public Service Company of Oklahoma">Public Service Company of Oklahoma</option>
+            <option value="Public Service Electric and Gas Company (PSE&G)">Public Service Electric and Gas Company
+              (PSE&G)</option>
+            <option value="Public Service of NH">Public Service of NH</option>
+            <option value="Puget Sound Energy">Puget Sound Energy</option>
+            <option value="PWC Fayetteville">PWC Fayetteville</option>
+            <option value="Randolph Electric Membership Corp">Randolph Electric Membership Corp</option>
+            <option value="Rappahannock Electric Cooperative">Rappahannock Electric Cooperative</option>
+            <option value="Redding Electric Utility (REU)">Redding Electric Utility (REU)</option>
+            <option value="Reliant Energy">Reliant Energy</option>
+            <option value="River Falls Municipal Utility">River Falls Municipal Utility</option>
+            <option value="Riverside Public Utilities">Riverside Public Utilities</option>
+            <option value="Rochester Gas & Electric">Rochester Gas & Electric</option>
+            <option value="Rochester Public Utilities">Rochester Public Utilities</option>
+            <option value="Rural Valley Electric Co.">Rural Valley Electric Co.</option>
+            <option value="Rushmore Electric Cooperative">Rushmore Electric Cooperative</option>
+            <option value="Sacramento Municipal Utility District">Sacramento Municipal Utility District</option>
+            <option value="Salem Electric">Salem Electric</option>
+            <option value="Salt River Electric">Salt River Electric</option>
+            <option value="Salt River Project">Salt River Project</option>
+            <option value="Sam Houston Electric">Sam Houston Electric</option>
+            <option value="San Diego Gas & Electric">San Diego Gas & Electric</option>
+            <option value="Santee Cooper">Santee Cooper</option>
+            <option value="Sawnee EMC">Sawnee EMC</option>
+            <option value="Seattle City Light">Seattle City Light</option>
+            <option value="SELCO">SELCO</option>
+            <option value="Shenandoah Valley Electric Cooperative">Shenandoah Valley Electric Cooperative</option>
+            <option value="Sierra Pacific Power">Sierra Pacific Power</option>
+            <option value="Sierra-Pacific Power">Sierra-Pacific Power</option>
+            <option value="Silicon Valley Power">Silicon Valley Power</option>
+            <option value="SLECMO">SLECMO</option>
+            <option value="Snohomish County Public Utility District (PUD)">Snohomish County Public Utility District
+              (PUD)</option>
+            <option value="Source Power and Gas">Source Power and Gas</option>
+            <option value="South Carolina Electric & Gas Company">South Carolina Electric & Gas Company</option>
+            <option value="South Central Power Company">South Central Power Company</option>
+            <option value="Southern California Edison">Southern California Edison</option>
+            <option value="Southern California Public Power Authority">Southern California Public Power Authority
+            </option>
+            <option value="Southern Maryland Electric Cooperative">Southern Maryland Electric Cooperative</option>
+            <option value="Southern Rivers Energy">Southern Rivers Energy</option>
+            <option value="Southwest Mississippi Electric Power Association">Southwest Mississippi Electric Power
+              Association</option>
+            <option value="Southwestern Electric Power Company (SWEPCO)">Southwestern Electric Power Company (SWEPCO)
+            </option>
+            <option value="Springfield City Water Light & Power">Springfield City Water Light & Power</option>
+            <option value="Star Tex Power">Star Tex Power</option>
+            <option value="Sterling Municipal Light Department">Sterling Municipal Light Department</option>
+            <option value="Stream Energy">Stream Energy</option>
+            <option value="Sulphur Springs Valley Electric Cooperative">Sulphur Springs Valley Electric Cooperative
+            </option>
+            <option value="Summer Energy">Summer Energy</option>
+            <option value="Superior Plus Utility">Superior Plus Utility</option>
+            <option value="Surprise Valley Power">Surprise Valley Power</option>
+            <option value="Sussex Rural Electric Cooperative">Sussex Rural Electric Cooperative</option>
+            <option value="SWEPCO">SWEPCO</option>
+            <option value="Tacoma Power">Tacoma Power</option>
+            <option value="Tara Energy">Tara Energy</option>
+            <option value="TECO">TECO</option>
+            <option value="Tennessee Jackson Energy Authority">Tennessee Jackson Energy Authority</option>
+            <option value="Tennessee Valley Authority">Tennessee Valley Authority</option>
+            <option value="Texas Electric Service Company">Texas Electric Service Company</option>
+            <option value="Tideland EMC">Tideland EMC</option>
+            <option value="Tillamook PUD">Tillamook PUD</option>
+            <option value="Toledo Edison">Toledo Edison</option>
+            <option value="Town of Vienna">Town of Vienna</option>
+            <option value="Tri Eagle Energy">Tri Eagle Energy</option>
+            <option value="Trico Electric Cooperative">Trico Electric Cooperative</option>
+            <option value="Tri-County Electric">Tri-County Electric</option>
+            <option value="Trinity PUD">Trinity PUD</option>
+            <option value="Trinity Valley Electric Cooperative">Trinity Valley Electric Cooperative</option>
+            <option value="Tucson Electric Power">Tucson Electric Power</option>
+            <option value="Turlock Irrigation District (TID)">Turlock Irrigation District (TID)</option>
+            <option value="UGI Utilities">UGI Utilities</option>
+            <option value="UniSource Energy Services">UniSource Energy Services</option>
+            <option value="United Cooperative Services">United Cooperative Services</option>
+            <option value="United Illuminating">United Illuminating</option>
+            <option value="United Power Inc">United Power Inc</option>
+            <option value="Unitil Corporation">Unitil Corporation</option>
+            <option value="Upper Missouri G&T Cooperative">Upper Missouri G&T Cooperative</option>
+            <option value="Upper Peninsula Power Company">Upper Peninsula Power Company</option>
+            <option value="Valley Electric Association">Valley Electric Association</option>
+            <option value="Vernon Light & Power">Vernon Light & Power</option>
+            <option value="Vineland Municipal Electric Utility">Vineland Municipal Electric Utility</option>
+            <option value="Wake Electric">Wake Electric</option>
+            <option value="Wakefield Municipal Gas and Light Department">Wakefield Municipal Gas and Light Department
+            </option>
+            <option value="Wallingford Electric">Wallingford Electric</option>
+            <option value="Wasco Electric">Wasco Electric</option>
+            <option value="Washington - St. Tammany Electric Cooperative">Washington - St. Tammany Electric Cooperative
+            </option>
+            <option value="We Energies">We Energies</option>
+            <option value="Weakley County Municipal Electric System">Weakley County Municipal Electric System</option>
+            <option value="Wellsboro Electric Company">Wellsboro Electric Company</option>
+            <option value="West Oregon Electric Cooperative">West Oregon Electric Cooperative</option>
+            <option value="Westar Energy">Westar Energy</option>
+            <option value="Western Massachusetts Electric">Western Massachusetts Electric</option>
+            <option value="Wheeling Electric Power (AEP Ohio)">Wheeling Electric Power (AEP Ohio)</option>
+            <option value="WIlson Energy">WIlson Energy</option>
+            <option value="Wiregrass Electric Cooperative">Wiregrass Electric Cooperative</option>
+            <option value="Wisconsin Power and Light Company">Wisconsin Power and Light Company</option>
+            <option value="Wisconsin Public Service Corporation">Wisconsin Public Service Corporation</option>
+            <option value="Withlacoochee River Electric Cooperative">Withlacoochee River Electric Cooperative</option>
+            <option value="WTU Retail Energy">WTU Retail Energy</option>
+            <option value="Wyandotte Municipal Services">Wyandotte Municipal Services</option>
+            <option value="Xcel Energy">Xcel Energy</option>
+            <option value="XOOM Energy">XOOM Energy</option>
+
+
+          </select>
+
+
+          <!-- select khtm -->
+          <br><br>
+          <input style="width: 70%; border-radius: 17px" type="text" name="service" onchange="validate3()"
+            placeholder="Type Your Own And Continue" /><br><br>
+
+          <input type="button" name="next" class="next action-button" id="start4" value="CONTINUE" />
+          <!-- test phsae -->
+          <div class="alert" id="allp4">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <strong>Warning!</strong> Select the option to proceed.
+          </div>
+
+          <!-- test phsae -->
+          <br><br>
+
+
+        </fieldset>
+        <fieldset>
+          <h2 class="fs-title">What is your Best Call Time?</h2>
+          <p class="pwala">Choose your Time:</p>
+          <br><br>
+          <!-- select -->
+
+          <select name="best_call_time" id="selectbox">
+            <option value="Afternoon">Afternoon</option>
+            <option value="Anytime">Anytime</option>
+            <option value="Evening">Evening</option>
+            <option value="Morning">Morning</option>
+          </select>
+
+          <!-- select khtm -->
+          <br><br>
+
+          <input type="button" name="next" class="next action-button" value="CONTINUE" /><br><br>
+
+        </fieldset>
+        <fieldset>
+          <h2 class="fs-title">What is your Credit Rating?</h2>
+          <p class="pwala">Choose your Rating:</p>
+          <br><br>
+          <!-- select -->
+
+          <select name="credit_rating" id="selectbox">
+            <option value="Excellent">Excellent</option>
+            <option value="Fair">Fair</option>
+            <option value="Good">Good</option>
+            <option value="Poor">Poor</option>
+          </select><!-- select khtm -->
+          <br><br>
+
+          <input type="button" name="next" class="next action-button" value="CONTINUE" /><br><br>
+
+        </fieldset>
+        <fieldset>
+          <h2 class="fs-title">What is your Purchase Time Frame?</h2>
+          <p class="pwala">Choose your Purchase Time Frame:</p>
+          <br><br>
+          <!-- select -->
+
+          <select name="purchase_time_frame" id="selectbox">
+            <option value="1-3 months">1-3 months</option>
+            <option value="3+ months">3+ months</option>
+            <option value="Immediately">Immediately</option>
+            <option value="Within 1 months">Within 1 months</option>
+          </select>
+          <!-- select khtm -->
+          <br><br>
+
+          <input type="button" name="next" class="next action-button" value="CONTINUE" /><br><br>
+
+        </fieldset>
+        <fieldset>
+          <h2 class="fs-title">We've found companies interested<br>in sending you quotes!</h2>
+          <br>
+          <input class="buuttoon" type="text" id="first_name" name="first_name" onchange="validate4()"
+            placeholder="Fist name" />
+          <input class="buuttoon" type="text" id="last_name" name="last_name" onchange="validate4()"
+            placeholder="Last name" />
+          <input class="buuttoon" type="number"
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+            maxlength="10" id="phone_home" name="phone_home" onchange="validate4()"
+            placeholder="Home phone (10 digits)" />
+          <input class="buuttoon" type="email" id="email_address1" name="email_address" onchange="validate4()"
+            placeholder="Email" />
+          <br><span id="text1"></span>
+          <br>
+          
+          <p class="pwala2">By submitting this request, you authorize PowerSolar.info, our <a href="https://powersolar.info/partnerlist.html" target=_blank >Premier Partners.</a>, up to four solar
+            installation companies to place advertising or promotional calls and/or SMS/MMS messages (including text
+            messages) to you on the phone number you provided using autodialed and prerecorded/artificial voice calls
+            and/or messages even if your number is on any federal, state or local do not call list. Message and data
+            rates may apply. Message frequency varies.. Text &#8216;Help&#8217; for help. Text &#8216;Stop&#8217; to
+            cancel. Your consent to this agreement is not required to purchase products or services. We respect your
+            privacy. California Residents: Do Not Contact.</p>
+          <p>
+            <input type="checkbox" id="tcc" name="tcpa_compliant" onclick="ckkk(this)" value="yes" style="width: 5%;">
+            I agree to the terms of agreement.
+          </p>
+            <!-- test phsae -->
+          <div class="alert" id="allp5">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <strong>Warning!</strong>All the fields are mandotary and also mark the check box.
+          </div>
+
+          <!-- test phsae -->
+          <br><br>
+          <a href="index.html"><input type="button" class="action-button-previous" value="HOME" /></a>
+          <input type="submit" id="sub2" name="submit" class="submit action-button" value="Submit" />
+<input type="button" style="display: none;" name="next" class="next action-button"  id="start5" value="CONTINUE"/>
+
+          <!-- select khtm -->
+          <br><br>
+        </fieldset>
+      <br>
+
+        <!-- hidden fields -->
+        <input type="hidden" id="landing_page" name="landing_page" value="https://powersolar.info">
+
+
+        <input type="hidden" name="lp_offer_id" value="11" />
+        <input type="hidden" name="lp_campaign_id" value="60f08458e5043" />
+        <!-- The rest of the fields name must match what you have set in the vertical -->
+        <input type="hidden" name="lp_redirect_url" id="successUrl" value="" />
+        <!-- lp_redirect_url: Optional redirect url when the lead is accepted -->
+        <input type="hidden" name="lp_redirect_fail_url" value="https://powersolar.info/submitted.html" />
+        <!-- lp_redirect_fail_url: Optional redirect url when the lead is rejected. -->
+
+
+
+
+
+
+
+
+        <!-- <input type="hidden" id="lp_campaign_key" name="lp_campaign_key" value="T4LnN2BvqGdM9DRpz3HY"> -->
+
+        <input type="hidden" id="lp_s1" value="lp_s1" name="DirectPage">
+
+        <input type="hidden" id="lp_s2" value="lp_s2" name="">
+
+        <input id="leadid_token" name="jornaya_lead_id" type="hidden" value="" />
+
+        <input type="hidden" id="leadid_tcpa_disclosure" /><label style="display: none;" for="leadid_tcpa_disclosure"> By
+          submitting this request, you authorize PowerSolar.info, our <a href="https://powersolar.info/partnerlist.html" target=_blank >Premier Partners.</a>, up to four solar installation
+          companies to place advertising or promotional calls and/or SMS/MMS messages (including text messages) to you
+          on the phone number you provided using autodialed and prerecorded/artificial voice calls and/or messages even
+          if your number is on any federal, state or local do not call list. Message and data rates may apply. Message
+          frequency varies. Text Help; for help. Text Stop to cancel. Your consent to this
+          agreement is not required to purchase products or services. We respect your privacy. California Residents: Do
+          Not Contact.</label>
+          
+          
+
+
+        <input type="hidden" id="data" name="ip_address" value="">
+
+
+
+
+        <!-- lp_redirect_url: Optional redirect url when the lead is accepted -->
+
+
+        <input type="hidden" id="landing_page" name="landing_page_url" value="https://powersolar.info/submitted.html">
+        <input type="hidden" id="tcpa_consent_text" name="tcpa_consent_text" value="By
+          submitting this request, you authorize PowerSolar.info, our Premier Partners, up to four solar installation
+          companies to place advertising or promotional calls and/or SMS/MMS messages (including text messages) to you
+          on the phone number you provided using autodialed and prerecorded/artificial voice calls and/or messages even
+          if your number is on any federal, state or local do not call list. Message and data rates may apply. Message
+          frequency varies. Text Help; for help. Text Stop to cancel. Your consent to this
+          agreement is not required to purchase products or services. We respect your privacy. California Residents: Do
+          Not Contact.">
+
+        <input type="hidden" id="user_agent" name="user_agent" value="">
+        <!-- hidden fields khtm -->
+        <img class="image3 " src="iconpic.jpg">
+      </form>
+
+      <br><br>
+
+    </div>
+  </div>
+  </div>
+  <!-- scrpt of foarm -->
+  <script>
+    var ua = navigator.userAgent;
+    var info = {
+      browser: /Edge\/\d+/.test(ua) ? 'ed' : /MSIE 9/.test(ua) ? 'ie9' : /MSIE 10/.test(ua) ? 'ie10' : /MSIE 11/.test(ua) ? 'ie11' : /MSIE\s\d/.test(ua) ? 'ie?' : /rv\:11/.test(ua) ? 'ie11' : /Firefox\W\d/.test(ua) ? 'ff' : /Chrom(e|ium)\W\d|CriOS\W\d/.test(ua) ? 'gc' : /\bSafari\W\d/.test(ua) ? 'sa' : /\bOpera\W\d/.test(ua) ? 'op' : /\bOPR\W\d/i.test(ua) ? 'op' : typeof MSPointerEvent !== 'undefined' ? 'ie?' : '',
+      os: /Windows NT 10/.test(ua) ? "win10" : /Windows NT 6\.0/.test(ua) ? "winvista" : /Windows NT 6\.1/.test(ua) ? "win7" : /Windows NT 6\.\d/.test(ua) ? "win8" : /Windows NT 5\.1/.test(ua) ? "winxp" : /Windows NT [1-5]\./.test(ua) ? "winnt" : /Mac/.test(ua) ? "mac" : /Linux/.test(ua) ? "linux" : /X11/.test(ua) ? "nix" : "",
+      touch: 'ontouchstart' in document.documentElement,
+      mobile: /IEMobile|Windows Phone|Lumia/i.test(ua) ? 'w' : /iPhone|iP[oa]d/.test(ua) ? 'i' : /Android/.test(ua) ? 'a' : /BlackBerry|PlayBook|BB10/.test(ua) ? 'b' : /Mobile Safari/.test(ua) ? 's' : /webOS|Mobile|Tablet|Opera Mini|\bCrMo\/|Opera Mobi/i.test(ua) ? 1 : 0,
+      tablet: /Tablet|iPad/i.test(ua),
+    };
+    document.getElementById('user_agent').value = ua;
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  </script>
+
+  <script id="LeadiDscript" type="text/javascript">
+    (function () {
+      var s = document.createElement('script');
+      s.id = 'LeadiDscript_campaign';
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = '//create.lidstatic.com/campaign/5f66e54c-7c33-3661-8a7b-9b7c885f93d6.js?snippet_version=2';
+      var LeadiDscript = document.getElementById('LeadiDscript');
+      LeadiDscript.parentNode.insertBefore(s, LeadiDscript);
+    })();
+  </script>
+  <noscript><img
+      src='//create.leadid.com/noscript.gif?lac=0f8580e1-10b6-a5ab-b0df-1a2b8cf787af&lck=5f66e54c-7c33-3661-8a7b-9b7c885f93d6&snippet_version=2' /></noscript>
+
+
+  <script>
+    /* Add "https://api.ipify.org?format=json" statement
+       this will communicate with the ipify servers in
+       order to retrieve the IP address $.getJSON will
+       load JSON-encoded data from the server using a
+       GET HTTP request */
+
+    $.getJSON("https://api.ipify.org?format=json",
+      function (data) {
+
+        // Setting text of element P with id gfg
+        $("#data").html(data.ip);
+      })
+  </script>
+  <script type="text/javascript">
+
+
+
+
+      (function () {
+        var field = 'trusted_form_cert_id';
+        var provideReferrer = false;
+        var invertFieldSensitivity = false;
+        var tf = document.createElement('script');
+        tf.type = 'text/javascript'; tf.async = true;
+        tf.src = 'http' + ('https:' == document.location.protocol ? 's' : '') +
+          '://api.trustedform.com/trustedform.js?provide_referrer=' + escape(provideReferrer) + '&field=' + escape(field) + '&l=' + new Date().getTime() + Math.random() + '&invert_field_sensitivity=' + invertFieldSensitivity;
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(tf, s);
+      }
+      )();
+  </script>
+  <noscript>
+    <img src="http://api.trustedform.com/ns.gif" />
+  </noscript>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+
+    $.getJSON("https://api.ipify.org?format=json", function (data) {
+
+      $("#ip").html(data.ip);
+
+    })
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+    crossorigin="anonymous"></script>
+  <script>
+    setTimeout(function () {
+      if ($('#msg').length > 0) {
+        $('#msg').remove();
+      }
+    }, 1)
+
+    // <!-- User Agent -->
+  </script>
+  <!-- scrpt of foarmkhtm -->
+  <!-- second page -->
+  <div style="background-color: #f69544 ">
+    <br><br><br><br>
+    <h1 class="text-center pwala"><b>How Does It Works?</b></h1><br> <br><br><br>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="dottxxt pwala text-center">
+          <h1><b>Step 1</b></h1>
+          <h3>Take Our Quick Surve</h3>
+          <h5 class="dotcolor">We use this to determine and configure the best deals, local incentives and trusted
+            installers.</h5>
+        </div>
+        <br><br><br>
+        <div class="dottxxt2 pwala text-center">
+          <h1><b>Step 3</b></h1>
+          <h3>You Pick The Best Deals</h3>
+          <h5 class="dotcolor">Presenting you with first-rate solar deals tailored to your situation. It really is that
+            fast and simple.</h5>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="dottxxt1 pwala text-center">
+          <h1><b>Step 2</b></h1>
+          <h3>We Conects The Dots</h3>
+          <h5 class="dotcolor">Our priority connects yoy to top rated solar partner. Finding you the most money saving
+            options available.</h5>
+        </div>
+        <div class="dottxxt5 pwala text-center">
+          <h1><b>Step 3</b></h1>
+          <h3>You Pick The Best Deals</h3>
+          <h5 class="dotcolor">Presenting you with first-rate solar deals tailored to your situation. It really is that
+            fast and simple.</h5>
+        </div>
+      </div>
+    </div><br><br>
+    <!-- second page khtm -->
+    <div style="width: 100%; text-align: right;">
+      <img class="iimage3 " style="z-index: -1%;" src="Path 6.png">
+    </div>
+    <!-- akhrii kam -->
+    <div class="mukchuk text-center">
+      <br><br>
+      <h1><b>Save Upto <b style="color: #9B0707">20%</b> Of Installation Costs Through Federal Tax Credits Until
+          2021!</b></h1>
+      <br><br>
+    </div>
+    <div class="mukchuk1 ">
+      <br><br>
+      <div class="text-center">
+        <br><br>
+        <h2>Get Get Your Solar Estimates NOW!</h2>
+        <h5>Take our quick survey & be connected to trusted <br>installers</h5><br>
+        <a href="#up"><input type="button" name="next" class="lastbtt" value="Get Your free Quote Today" /></a>
+        <br><br><br><br>
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="bback">
+    <br>
+    <h4 class="text-center"><b>Copyright 2021.All rights reserved</b></h4>
+    <hr class="alaa">
+    <!-- overlay k shahkay -->
+
+    <!-- overlay k shahkay khtm -->
+    <p style="margin-bottom: 1%; color: white; text-align: center;">
+      <span style="cursor:pointer;"><a target="_blank" href="https://powersolar.info/privacy.html"
+          style="color: white;">Privacy Policy</a></span>
+      &nbsp;&nbsp;&nbsp; &nbsp;
+      <span style="cursor:pointer"><a target="_blank" href="https://powersolar.info/terms.html"
+          style="color: white;">Terms & Conditions</a></span>
+
+      &nbsp;&nbsp;&nbsp; &nbsp;
+      <a href="mailto:contact@thesolarpower.info" style="color: white !important" class="text-middle">Contact Us</a>
+    </p><br>
+  </div>
+  <!-- akhrii kam -->
+
+
+
+
+  <!-- /.MultiStep Form -->
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+  <!-- jQuery easing plugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"
+    type="text/javascript"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+  <!-- validation ka kam  -->
+  <script>
+    function validate() {
+      var z = document.getElementsByName('roof_shade');
+      if (z[0].checked || z[1].checked || z[2].checked || z[3].checked) {
+        document.getElementById('start1').disabled = false;
+        document.getElementById('allp1').style.display = 'none';
+      }
+    }
+
+    function validate1() {
+      var x = document.getElementById('address').value;
+      let email = document.getElementById('email_address').value
+      let text = document.getElementById('text')
+      let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
+
+      if (email.match(pattern) && x != "") {
+        document.getElementById('start2').disabled = false;
+        document.getElementById('allp2').style.display = 'none';
+      }
+      else {
+        text.innerHTML = "Please Enter Valid Email Address"
+        text.style.color = '#FFEC06'
+      }
+
+      if (email == '') {
+        text.innerHTML = ""
+        text.style.color = '#00ff00'
+      }
+    }
+
+
+    function validate2() {
+      var l = document.getElementById('address').value;
+      var m = document.getElementById('city').value;
+      var n = document.getElementById('state').value;
+      var o = document.getElementById('zip_code').value.length;
+
+      if (l != "" && m != "" && n != "" && o == "5") {
+        document.getElementById('start3').disabled = false;
+        document.getElementById('allp3').style.display = 'none';
+      }
+    }
+
+    function validate3() {
+      var a = document.getElementsByName('utility_provider').value;
+      var b = document.getElementsByName('service').value;
+      if (a != "Unsure/Not Listed" && b != "") {
+        document.getElementById('start4').disabled = false;
+        document.getElementById('allp4').style.display = 'none';
+      }
+    }
+
+    function validate4() {
+      var a = document.getElementById('first_name').value;
+      var b = document.getElementById('last_name').value;
+
+      var c = document.getElementById('phone_home').value.length;
+
+      let email = document.getElementById('email_address1').value
+      let text = document.getElementById('text1')
+      let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
+
+      if (a != "" && b != "" && c =="10" && email.match(pattern)) {
+        document.getElementById('start5').disabled = false;
+        document.getElementById('allp5').style.display = 'none';
+      }
+      else {
+        text.innerHTML = "Please Enter 10 digit phone and Enter Valid Email Address"
+        text.style.color = '#FFEC06'
+        document.getElementById('allp5').style.display='block';
+      }
+
+      if (email == '') {
+        text.innerHTML = ""
+        text.style.color = '#00ff00'
+      }
+
+    }
+    // function typenext() {
+    //             var type = document.getElementsByName('tcpa_compliant');
+    //             if (type.checked) {
+    //                 document.getElementById('sub2').disabled = false;
+    //             }
+    // }
+
+    ckkk = function (val) {
+   var submt=document.getElementById('sub2');
+      console.log("Value = ", submt)
+      var a=document.getElementById('first_name').value;
+      var b=document.getElementById('last_name').value;
+     
+      var c=document.getElementById('phone_home').value.length;
+       
+        let email = document.getElementById('email_address1').value
+          let text = document.getElementById('text1')
+          let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
+
+      if(val.checked==true && a!="" && b!="" && c=="10" && email.match(pattern)){
+        submt.disabled=false;
+         document.getElementById('allp5').style.display='none';
+      }
+      else{
+        submt.disabled=true;
+          text.innerHTML = "Please enter 10 digit phone and Enter Valid Email Address and please also mark the check box below"
+    text.style.color = '#FFEC06'
+    document.getElementById('allp5').style.display='block';
+    }
+    }
+  </script>
+  <!-- validation ka kam khtm -->
+
+
+  <script type="text/javascript">
+
+    //jQuery time
+    var current_fs, next_fs, previous_fs; //fieldsets
+    var left, opacity, scale; //fieldset properties which we will animate
+    var animating; //flag to prevent quick multi-click glitches
+
+    $(".next").click(function () {
+      if (animating) return false;
+      animating = true;
+
+      current_fs = $(this).parent();
+      next_fs = $(this).parent().next();
+
+      //activate next step on progressbar using the index of next_fs
+      $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+      //show the next fieldset
+      next_fs.show();
+      //hide the current fieldset with style
+      current_fs.animate({ opacity: 0 }, {
+        step: function (now, mx) {
+          //as the opacity of current_fs reduces to 0 - stored in "now"
+          //1. scale current_fs down to 80%
+          scale = 1 - (1 - now) * 0.2;
+          //2. bring next_fs from the right(50%)
+          left = (now * 50) + "%";
+          //3. increase opacity of next_fs to 1 as it moves in
+          opacity = 1 - now;
+          current_fs.css({
+            'transform': 'scale(' + scale + ')',
+            'position': 'absolute'
+          });
+          next_fs.css({ 'left': left, 'opacity': opacity });
+        },
+        duration: 800,
+        complete: function () {
+          current_fs.hide();
+          animating = false;
+        },
+        //this comes from the custom easing plugin
+        easing: 'easeInOutBack'
+      });
+    });
+
+    $(".previous").click(function () {
+      if (animating) return false;
+      animating = true;
+
+      current_fs = $(this).parent();
+      previous_fs = $(this).parent().prev();
+
+      //de-activate current step on progressbar
+      $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+      //show the previous fieldset
+      previous_fs.show();
+      //hide the current fieldset with style
+      current_fs.animate({ opacity: 0 }, {
+        step: function (now, mx) {
+          //as the opacity of current_fs reduces to 0 - stored in "now"
+          //1. scale previous_fs from 80% to 100%
+          scale = 0.8 + (1 - now) * 0.2;
+          //2. take current_fs to the right(50%) - from 0%
+          left = ((1 - now) * 50) + "%";
+          //3. increase opacity of previous_fs to 1 as it moves in
+          opacity = 1 - now;
+          current_fs.css({ 'left': left });
+          previous_fs.css({ 'transform': 'scale(' + scale + ')', 'opacity': opacity });
+        },
+        duration: 800,
+        complete: function () {
+          current_fs.hide();
+          animating = false;
+        },
+        //this comes from the custom easing plugin
+        easing: 'easeInOutBack'
+      });
+    });
+
+
+  </script>
+  <script type="text/javascript">
+
+
+    function storeurl() {
+
+      console.log("Value of lp_s1 before", document.getElementById('lp_s1').value);
+      console.log("Value of lp_s2 before", document.getElementById('lp_s2').value);
+
+      var url_string = document.URL; //window.location.href
+      var url = new URL(url_string);
+      var affid = url.searchParams.get("affid");
+      var tid = url.searchParams.get("tid");
+      // const rid = url.searchParams.get('rid')
+
+      document.getElementById('lp_s1').value = affid;
+      document.getElementById('lp_s2').value = tid;
+      console.log("affid", affid);
+      console.log("tid", tid);
+      console.log("Value of lp_s1 after", document.getElementById('lp_s1').value);
+      console.log("Value of lp_s2  after", document.getElementById('lp_s2').value);
+      // let passurl = "https://powersolar.info/submitted.html?rid=" + rid;
+      // document.getElementById('successUrl').value = passurl;
+      // validaton lines
+      document.getElementById('satrted').disabled = true;
+      document.getElementById('start1').disabled = true;
+      document.getElementById('start2').disabled = true;
+      document.getElementById('start3').disabled = true;
+      document.getElementById('start4').disabled = true;
+      document.getElementById('start5').disabled = true;
+      document.getElementById('sub2').disabled = true;
+      // validaton lines
+
+      $(document).ready(function () {
+        $("form").bind("keypress", function (e) {
+          if (e.keyCode == 13) {
+            return false;
+          }
+        });
+      });
+
+    }
+
+
+
+  </script>
+  <script>
+    function myFunction() {
+      var url_string = document.URL; //window.location.href
+      var url = new URL(url_string);
+      const rid = url.searchParams.get('rid')
+      console.log("rid", rid);
+      var affid = document.getElementById('lp_s1').value;
+      var first_name = document.getElementById('first_name').value;
+      var last_name = document.getElementById('last_name').value;
+      var phone_home = document.getElementById('phone_home').value;
+      var email_address = document.getElementById('email_address1').value;
+      var address = document.getElementById('address').value;
+      var city = document.getElementById('city').value;
+      var state = document.getElementById('state').value;
+      var zip_code = document.getElementById('zip_code').value;
+
+      var passurl = 'https://powersolar.info/submitted.html?affid=' + affid + '&rid=' + rid + '&first_name=' + first_name + '&last_name=' + last_name + '&phone_home=' + phone_home + '&email_address=' + email_address + '&address=' + address + '&city=' + city + '&state=' + state + '&zip_code=' + zip_code;
+      document.getElementById('successUrl').value = passurl;
+      console.log("success new", document.getElementById('successUrl').value);
+    }
+  </script>
+
+</body>
+
+</html>

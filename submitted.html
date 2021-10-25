@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Thank You</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="thankyou.css" type="text/css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body onload="myfunction()">
+    <div class="thankyou-page">
+        <div class="_header">
+            <div class="_box">
+                <a id="link" href="">
+                    <img alt="W3Schools"
+                        src="AAA.jpg"
+                        onsubmit="myFunction()" width="100%;" height="400vh;">
+                </a>
+            </div>
+           
+            <h1>Thank You!</h1>
+        </div>
+        <div class="_body">
+            <div class="_box">
+                <h2>
+                    <strong>One of our partners will reach out to you</strong> for further instructions on how to help
+                    save energy with you.
+                </h2>
+
+            </div>
+            
+        </div>
+        <div class="_footer">
+            <iframe src="" id="postback" scrolling="no" frameborder="0" width="1" height="1"></iframe>
+            <p>Having trouble? <a href="#">Contact us</a> </p><br>
+            <a class="btn" href="https://powersolar.info/">Back to homepage</a>
+        </div>
+    </div>
+    <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const rid = urlParams.get("rid");
+        const affid = urlParams.get("affid");
+        const first_name = urlParams.get("first_name");
+        const last_name = urlParams.get("last_name");
+        const phone_home = urlParams.get("phone_home");
+        const email_address = urlParams.get("email_address");
+        const address = urlParams.get("address");
+        const city = urlParams.get("city");
+        const state = urlParams.get("state");
+        const zip_code = urlParams.get("zip_code");
+        let postback = "https://eeltracklp.leadspediatrack.com/pixel.do?t=pb&request_id=" + rid;
+        document.getElementById("postback").src = postback;
+        console.log("postback=", document.getElementById("postback").src);
+        console.log("postback=", postback);
+    </script>
+
+    <script>
+        function myfunction() {
+            const prepopurl = "https://harpratequiz.com/?affid=" + affid + "&first_name=" + first_name + "&last_name=" + last_name + "&phone_home=" + phone_home + "&email_address=" + email_address + "&address=" + address + "&city=" + city + "&state=" + state + "&zip_code=" + zip_code;
+            document.getElementById("link").href = prepopurl;
+            console.log("Prepopurl", prepopurl);
+
+        }
+    </script>
+
+</body>
+
+</html>
